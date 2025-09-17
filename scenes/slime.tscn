@@ -1,0 +1,69 @@
+[gd_scene load_steps=13 format=3 uid="uid://ybrpbqtirtgc"]
+
+[ext_resource type="Script" path="res://scripts/slime.gd" id="1_wt65a"]
+[ext_resource type="Texture2D" uid="uid://dibft88msxery" path="res://assets/MonsterWalking/frame-1.png" id="2_7jn0t"]
+[ext_resource type="Texture2D" uid="uid://bc4jbbdsvuyba" path="res://assets/MonsterWalking/frame-2.png" id="3_rmeux"]
+[ext_resource type="Texture2D" uid="uid://cmfe5rf4w7l7k" path="res://assets/MonsterWalking/frame-3.png" id="4_dm464"]
+[ext_resource type="Texture2D" uid="uid://hxblkntiav4w" path="res://assets/MonsterWalking/frame-4.png" id="5_u77u6"]
+[ext_resource type="Texture2D" uid="uid://c71avc6sru75o" path="res://assets/MonsterWalking/frame-5.png" id="6_ji7cb"]
+[ext_resource type="Texture2D" uid="uid://b7qp38v4ovrq5" path="res://assets/MonsterWalking/frame-6.png" id="7_csrn3"]
+[ext_resource type="Texture2D" uid="uid://djhitgy2qk4pu" path="res://assets/MonsterWalking/frame-7.png" id="8_xsee5"]
+[ext_resource type="Texture2D" uid="uid://cv3cwpmon4m5" path="res://assets/MonsterWalking/frame-8.png" id="9_lnl1m"]
+[ext_resource type="PackedScene" uid="uid://dbb306psnk7f0" path="res://scenes/killzone.tscn" id="9_p7k4k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jdga3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7jn0t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rmeux")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dm464")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_u77u6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ji7cb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_csrn3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xsee5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_lnl1m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1wfa7"]
+radius = 169.106
+
+[node name="Slime" type="Node2D"]
+script = ExtResource("1_wt65a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jdga3")
+autoplay = "default"
+frame_progress = 0.476783
+
+[node name="Killzone" parent="." instance=ExtResource("9_p7k4k")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_1wfa7")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(0, 1)
+target_position = Vector2(358, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(-1, 1)
+target_position = Vector2(-342, 0)
