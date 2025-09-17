@@ -2,7 +2,7 @@
 
 **Author:** Colton Leighton  
 **Project Type:** 2D Dungeon Crawler / Super Mario Brothers-inspired Game  
-**Engine:** Godot Engine  
+**Engine:** Godot Editor  
 
 ---
 
