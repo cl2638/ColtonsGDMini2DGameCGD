@@ -12,15 +12,15 @@ WaterGDExtension is a custom node that extends 'Sprite2D' using C++ GDExtension 
 
 ## Features
 1. **Amplitude Control**  
-   The node moves its sprite in a wave pattern using sine and cosine. The **amplitude** property is editable in the Godot editor, allowing adjustment of how far the sprite oscillates vertically and horizontally.
+   The node moves its sprite in a wave pattern using sine and cosine. The amplitude property is editable in the Godot editor, allowing adjustment of how far the sprite oscillates vertically and horizontally.
 
 2. **Speed Control**  
-   The **speed** property controls how fast the wave motion occurs. Changing this value in the editor allows for subtle ripples or faster motion.
+   The speed property controls how fast the wave motion occurs. Changing this value in the editor allows for subtle ripples or faster motion.
 
 Both properties are bound to Godot via 'bing_methods()' and appear in the inspector for easy adjustment.
 
 ## Flexibility
-- The sprite's **length and width** can be edited to fit any scene layout.  
+- The sprite's length and width can be edited to fit any scene layout.  
 - 'process() ' updates the position each frame, creating smooth, continuous motion without using Godot’s built-in animation tools.  
 - This makes WaterGDExtension reusable and adaptable for multiple types of scenes.
 
