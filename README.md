@@ -25,4 +25,4 @@ Both properties are bound to Godot via 'bing_methods()' and appear in the inspec
 - This makes WaterGDExtension reusable and adaptable for multiple types of scenes.
 
 ## Summary
-WaterGDExtension is an editor-friendly node that extends 'Sprite2D' with adjustable wave motion. Its amplitude and speed properties allow precise control of motion, while scalable dimensions ensure it works in a variety of scenes. This node provides a strong foundation for creating dynamic water effects in 2D games.
+WaterGDExtension is an editor-friendly node that extends 'Sprite2D' with adjustable wave motion. Its amplitude and speed properties allow precise control of motion, while scalable dimensions on the x and y axis ensure it works in a variety of scenes. This node provides a strong foundation for creating dynamic water effects in 2D games.
