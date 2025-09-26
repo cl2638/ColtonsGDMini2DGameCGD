@@ -1,12 +1,26 @@
 [gd_scene load_steps=8 format=3 uid="uid://ctrp3gua86f83"]
 
-[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_06cho"]
-[ext_resource type="Shader" path="res://pause_menu.gdshader" id="2_grts7"]
+[ext_resource type="Script" uid="uid://cmt8cqjr0fbuc" path="res://scripts/pause_menu.gd" id="1_06cho"]
+[ext_resource type="Shader" uid="uid://c7tkcc8wc161u" path="res://pause_menu.gdshader" id="2_grts7"]
 [ext_resource type="FontFile" uid="uid://cyy7xx4745bvn" path="res://assets/PixelOperator8.ttf" id="3_e6eic"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_poipa"]
 shader = ExtResource("2_grts7")
 shader_parameter/lod = 0.0
+
+[sub_resource type="Animation" id="Animation_lb1nl"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_q0n5v"]
 resource_name = "blur"
@@ -23,24 +37,10 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3)
 }
 
-[sub_resource type="Animation" id="Animation_lb1nl"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5h8k6"]
 _data = {
-"RESET": SubResource("Animation_lb1nl"),
-"blur": SubResource("Animation_q0n5v")
+&"RESET": SubResource("Animation_lb1nl"),
+&"blur": SubResource("Animation_q0n5v")
 }
 
 [node name="PauseMenu" type="Control"]
@@ -94,7 +94,7 @@ text = "Quit"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_5h8k6")
+&"": SubResource("AnimationLibrary_5h8k6")
 }
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]

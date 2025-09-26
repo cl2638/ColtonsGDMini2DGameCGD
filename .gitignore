@@ -1,3 +1,29 @@
-# Godot 4+ specific ignores
+# Godot editor and temporary files
+.import/
+.export/
 .godot/
-/android/
+*.godot
+*.import
+*.tscn~
+*.tres~
+*.tmp
+*.log
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore SCons/GDExtension build folders for godot-cpp
+godot-cpp/
+bin/       # ignore generic bin folders
+*.so
+*.dll
+*.dylib
+*.pdb
+
+# Exceptions: Include your actual GDNative/GDExtension demo build
+!demo/bin/
+!demo/bin/**
+
+# Optional: ignore editor-specific files
+.vscode/
